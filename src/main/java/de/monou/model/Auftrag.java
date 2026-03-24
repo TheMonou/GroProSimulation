@@ -8,6 +8,14 @@ public class Auftrag {
 
     private final String beschreibung;
 
+    private Koordinate ankerpunkt;
+
+    private Koordinate andockpunktLO;
+
+    private Koordinate andockpunktRU;
+
+    private Koordinate ro;
+
     public Auftrag(int id, int breite, int hoehe, String beschreibung) {
         this.id = id;
         this.breite = breite;
@@ -38,4 +46,28 @@ public class Auftrag {
     public String getBeschreibung() {
         return beschreibung;
     }
+
+    public void setAnkerpunkt(Koordinate ankerpunkt) {
+        this.ankerpunkt = ankerpunkt;
+        this.andockpunktLO = new Koordinate(ankerpunkt.getX(),  ankerpunkt.getY() + hoehe);
+        this.andockpunktRU = new Koordinate(ankerpunkt.getX() + breite, ankerpunkt.getY());
+        this.ro = new Koordinate(ankerpunkt.getX() + breite, ankerpunkt.getY() + hoehe);
+    }
+
+    public Koordinate getAnkerpunkt() {
+        return ankerpunkt;
+    }
+
+    public Koordinate getAndockpunktLO() {
+        return andockpunktLO;
+    }
+
+    public Koordinate getAndockpunktRU() {
+        return andockpunktRU;
+    }
+
+    public Koordinate getRo() {
+        return ro;
+    }
+
 }
