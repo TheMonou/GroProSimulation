@@ -59,27 +59,83 @@ public class Main {
     private static PlatzierungResult platziereAuftraege(List<Auftrag> auftraege, int breite, int hoehe, List<Koordinate> andockpunkte){
         List<Auftrag> result = new ArrayList<>();
         int bestHoehe = hoehe;
+        //Der Größe nach sortieren
         List<Auftrag> sortierteAuftraege = sortiereAuftraege(auftraege);
-        Auftrag auftrag = auftraege.removeFirst();
-        Auftrag flippedAuftrag = new Auftrag(auftrag.getId(), auftrag.getHoehe(), auftrag.getBreite(), auftrag.getBeschreibung());
 
-        for(Auftrag a : sortierteAuftraege){
+        for(int i = 0; i < sortierteAuftraege.size(); i++){
+            Auftrag auftrag = sortierteAuftraege.remove(i);
 
+            // Alle Aufträge außer den aktuellen betrachten
+            List<Auftrag> currentAuftraege = new ArrayList<>(List.copyOf(sortierteAuftraege));
+
+
+            // Auftrag in beide Richtungen betrachten
+            Auftrag flippedAuftrag = new Auftrag(auftrag.getId(), auftrag.getHoehe(), auftrag.getBreite(), auftrag.getBeschreibung());
+
+            // Aktuelle Pfadhoehe
+            int pfadHoehe = 0;
+
+            //Jeden freien Andockpunkt betrachten
+            for(int k = 0; k < andockpunkte.size(); k++){
+                Koordinate currentAndockpunkt = andockpunkte.get(i);
+
+                //Überprüfen, ob der Auftrag an diesem Andockpunkt platziert werden kann
+                if(kannPlatzieren(currentAndockpunkt, auftrag.getBreite(), auftrag.getHoehe(), breite, andockpunkte)){
+                    // Auftrag platzieren
+                    auftrag.setAnkerpunkt(currentAndockpunkt);
+                    List<Koordinate> currentAndockpunkte = new ArrayList<>(andockpunkte);
+
+                    // Andockpunkte aktualisieren
+                    currentAndockpunkte.remove(currentAndockpunkt);
+                    currentAndockpunkte.add(auftrag.getAndockpunktLO());
+                    currentAndockpunkte.add(auftrag.getAndockpunktRU());
+
+                    //Letzter Auftrag
+                    if(currentAuftraege.isEmpty()){
+                        if(hoehe + auftrag.getHoehe() <= bestHoehe){
+                            bestHoehe = hoehe + auftrag.getHoehe();
+                        }
+                    }
+
+                    // Erster Pfad
+                    if(k==0){
+                            pfadHoehe = auftrag.getHoehe() + platziereAuftraege(currentAuftraege, breite, auftrag.getHoehe(), currentAndockpunkte).getHoehe();
+                    }else{
+
+                    }
+
+                    
+                }
+                if(kannPlatzieren(currentAndockpunkt, flippedAuftrag.getBreite(), flippedAuftrag.getHoehe(), breite, andockpunkte)) {
+                    //Flipped Auftrag platzieren
+                    flippedAuftrag.setAnkerpunkt(currentAndockpunkt);
+                    List<Koordinate> currentAndockpunkte = new ArrayList<>(andockpunkte);
+                    // Andockpunkte aktualisieren
+                    currentAndockpunkte.remove(currentAndockpunkt);
+                    currentAndockpunkte.add(flippedAuftrag.getAndockpunktLO());
+                    currentAndockpunkte.add(flippedAuftrag.getAndockpunktRU());
+
+                    //Letzter Auftrag
+                    if(currentAuftraege.isEmpty()){
+                        if(hoehe + flippedAuftrag.getHoehe() <= bestHoehe){
+                            bestHoehe = hoehe + flippedAuftrag.getHoehe();
+                        }
+                    }
+                }
+
+            }
         }
-
-
-
-        for(Koordinate koordinate : andockpunkte){
-
-        }
+        
+        
+        
 
 
 
         return  result;
     }
 
-    private boolean kannPlatzieren(Koordinate andockpunkt, int auftragBreite, int auftragHoehe, int gesamtBreite,
-                                   List<Koordinate> andockpunkte){
+    private static boolean kannPlatzieren(Koordinate andockpunkt, int auftragBreite, int auftragHoehe, int gesamtBreite,
+                                          List<Koordinate> andockpunkte){
         Koordinate linksOben = new Koordinate(andockpunkt.getX(), andockpunkt.getY() + auftragHoehe);
         Koordinate rechtsUnten = new Koordinate(andockpunkt.getX() + auftragBreite, andockpunkt.getY());
         if(rechtsUnten.getX() > gesamtBreite){
