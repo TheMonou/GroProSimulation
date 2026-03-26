@@ -33,6 +33,7 @@ public class Main {
 
         List<Auftrag> result = new ArrayList<>();
         List<Koordinate> andockpunkte = new ArrayList<>();
+        andockpunkte.add(new Koordinate(0,0));
         int hoehe = 0;
 
         for(List<Auftrag> abschnitt : input.getAbschnitte()){
@@ -44,6 +45,8 @@ public class Main {
 
             result.addAll(platzierungResult.getAuftragList());
             hoehe += platzierungResult.getHoehe();
+            andockpunkte.clear();
+            andockpunkte.addAll(platzierungResult.getAndockpunkte());
         }
 
 
@@ -65,15 +68,18 @@ public class Main {
     }
 
     private static PlatzierungResult platziereAuftraege(List<Auftrag> auftraege, int breite, int hoehe, List<Koordinate> andockpunkte){
-        List<Auftrag> result = new ArrayList<>();
+        List<Auftrag> auftragList = new ArrayList<>(auftraege);
+        List<Auftrag> platzierteAuftragList = new ArrayList<>();
+        List<Koordinate> uebrigeAndockpunkte = new ArrayList<>(andockpunkte);
         int bestHoehe = hoehe;
 
         // Über alle Aufträge iterieren
-        for(int i = 0; i < auftraege.size(); i++){
-            Auftrag auftrag = auftraege.remove(i);
+        for(int i = 0; i < auftragList.size(); i++){
+            Auftrag auftrag = auftragList.remove(i);
+            logger.info("Auftrag {} wird verwendet", auftrag.toString());
 
             // Alle Aufträge außer den aktuellen betrachten
-            List<Auftrag> currentAuftraege = new ArrayList<>(List.copyOf(auftraege));
+            List<Auftrag> currentAuftraege = new ArrayList<>(List.copyOf(auftragList));
 
             // Auftrag in beide Richtungen betrachten
             Auftrag flippedAuftrag = new Auftrag(auftrag.getId(), auftrag.getHoehe(), auftrag.getBreite(), auftrag.getBeschreibung());
@@ -81,86 +87,126 @@ public class Main {
             // Aktuelle Pfadhoehe
             int pfadHoehe = 0;
 
+            Auftrag platzierterAuftrag = null;
+            List<Auftrag> pfadAuftraegeList = new ArrayList<>();
+
             //Jeden freien Andockpunkt betrachten
             for(int k = 0; k < andockpunkte.size(); k++){
                 Koordinate moeglicherAndockpunkt = andockpunkte.get(i);
 
+                logger.info("Möglicher Andockpunkt {}", moeglicherAndockpunkt.toString());
                 //Überprüfen, ob der Auftrag an diesem Andockpunkt platziert werden kann
-                if(kannPlatzieren(moeglicherAndockpunkt, auftrag.getBreite(), auftrag.getHoehe(), breite, andockpunkte)){
-                    // Auftrag platzieren
-                    auftrag.setAnkerpunkt(moeglicherAndockpunkt);
-                    List<Koordinate> currentAndockpunkte = new ArrayList<>(andockpunkte);
+
+                // Auftrag platzieren
+                auftrag.setAnkerpunkt(moeglicherAndockpunkt);
+                List<Koordinate> currentAndockpunkte = new ArrayList<>(andockpunkte);
+
+                if(kannPlatzieren(moeglicherAndockpunkt, auftrag, breite, andockpunkte)){
+                    logger.info("Auftrag konnte platziert werden");
 
                     // Andockpunkte aktualisieren
                     currentAndockpunkte.remove(moeglicherAndockpunkt);
                     currentAndockpunkte.add(auftrag.getAndockpunktLO());
                     currentAndockpunkte.add(auftrag.getAndockpunktRU());
 
-                    //Letzter Auftrag
+                    //Letzter Auftrag / Rekursionsanker
                     if(currentAuftraege.isEmpty()){
-                        if(k==0){
+                        //Erster Pfad
+                        if(pfadHoehe==0){
                             pfadHoehe = auftrag.getHoehe() +  hoehe;
+                            platzierterAuftrag = auftrag;
+                            uebrigeAndockpunkte = currentAndockpunkte;
                         }else{
+                            //Überschreiben, wenn besser als bisherige Lösung
                             if(pfadHoehe + auftrag.getHoehe() <= bestHoehe){
                                 bestHoehe = pfadHoehe + auftrag.getHoehe();
+                                platzierterAuftrag = auftrag;
+                                uebrigeAndockpunkte = currentAndockpunkte;
                             }
                         }
+                        //Nicht der letzte
                     }else{
-                        // Erster Pfad
-                        if(k==0){
-                            pfadHoehe = auftrag.getHoehe() + platziereAuftraege(currentAuftraege, breite, pfadHoehe, currentAndockpunkte).getHoehe();
+
+                        PlatzierungResult rekursionsSchritt = platziereAuftraege(currentAuftraege, breite, pfadHoehe, currentAndockpunkte);
+
+                        // Erster Pfad -> Immer überschreiben
+                        if(pfadHoehe==0){
+                            pfadHoehe = auftrag.getHoehe() + rekursionsSchritt.getHoehe();
+                            platzierterAuftrag = auftrag;
+                            pfadAuftraegeList.addAll(rekursionsSchritt.getAuftragList());
+                            currentAndockpunkte.addAll(rekursionsSchritt.getAndockpunkte());
                         }else{
+                            //Nicht erster Pfad -> überschreiben, wenn besser als bisheriger Pfad
+                            if(auftrag.getHoehe() + rekursionsSchritt.getHoehe() <= pfadHoehe){
+                                // Höhe neu berechnen
+                                pfadHoehe = auftrag.getHoehe() + rekursionsSchritt.getHoehe();
 
+                                // aktuellen Auftrag als beste Lösung speichern
+                                platzierterAuftrag = auftrag;
+
+                                // Übrigen Andockpunkte speichern
+                                uebrigeAndockpunkte = currentAndockpunkte;
+
+                                // Pfad in die Wiedergabe hinzufügen
+                                pfadAuftraegeList = rekursionsSchritt.getAuftragList();
+                            }
                         }
 
                     }
 
-
-                    
+                    // Beste Position platzieren
+                    platzierteAuftragList.addFirst(platzierterAuftrag);
                 }
-                if(kannPlatzieren(moeglicherAndockpunkt, flippedAuftrag.getBreite(), flippedAuftrag.getHoehe(), breite, andockpunkte)) {
-                    //Flipped Auftrag platzieren
-                    flippedAuftrag.setAnkerpunkt(moeglicherAndockpunkt);
-                    List<Koordinate> currentAndockpunkte = new ArrayList<>(andockpunkte);
-                    // Andockpunkte aktualisieren
-                    currentAndockpunkte.remove(moeglicherAndockpunkt);
-                    currentAndockpunkte.add(flippedAuftrag.getAndockpunktLO());
-                    currentAndockpunkte.add(flippedAuftrag.getAndockpunktRU());
 
-                    //Letzter Auftrag
-                    if(currentAuftraege.isEmpty()){
-                        if(hoehe + flippedAuftrag.getHoehe() <= bestHoehe){
-                            bestHoehe = hoehe + flippedAuftrag.getHoehe();
-                        }
-                    }
+                if(bestHoehe==0){
+                    bestHoehe = pfadHoehe;
+                    platzierteAuftragList.add(auftrag);
+                }else if(pfadHoehe<=bestHoehe){
+                    bestHoehe = pfadHoehe;
+                    platzierteAuftragList.add(auftrag);
+                }
+
+                flippedAuftrag.setAnkerpunkt(moeglicherAndockpunkt);
+                // Gedrehte Version
+                if(kannPlatzieren(moeglicherAndockpunkt, flippedAuftrag, breite, andockpunkte)) {
+
                 }
 
             }
+
+
         }
         
         
-        
+        PlatzierungResult ergebnis = new PlatzierungResult();
+        // Fertig platzierte Aufträge
+        ergebnis.addAllAuftraege(platzierteAuftragList);
+        // Ermittelte Hoehe
+        ergebnis.setHoehe(bestHoehe);
+        // Übbrig gebliebene Aufträge
+        ergebnis.addAllAndockpunkte(uebrigeAndockpunkte);
 
 
 
-        return  result;
+        return  ergebnis;
     }
 
-    private static boolean kannPlatzieren(Koordinate andockpunkt, int auftragBreite, int auftragHoehe, int gesamtBreite,
+    private static boolean kannPlatzieren(Koordinate andockpunkt, Auftrag auftrag, int gesamtBreite,
                                           List<Koordinate> andockpunkte){
-        Koordinate linksOben = new Koordinate(andockpunkt.getX(), andockpunkt.getY() + auftragHoehe);
-        Koordinate rechtsUnten = new Koordinate(andockpunkt.getX() + auftragBreite, andockpunkt.getY());
-        if(rechtsUnten.getX() > gesamtBreite){
+
+        if(auftrag.getAndockpunktRU().getX() > gesamtBreite){
             return false;
         }
         for(Koordinate k : andockpunkte){
             // Überlappung von unten
-            if((k.getX() > linksOben.getX()) && (k.getY() < linksOben.getY())){
+            if((k.getX() > auftrag.getAndockpunktLO().getX()) && (k.getY() < auftrag.getAndockpunktLO().getY()) && (k.getY() > auftrag.getAnkerpunkt().getY())){
+                System.out.println("Überlappung von unten");
+                System.out.println("Koordinate: (x: " + k.getX() + ", y: " + k.getY() + "), Auftrag: (x: " + auftrag.getAndockpunktLO().getX() + ", y: " + auftrag.getAndockpunktLO().getY() + ")");
                 return false;
             }
 
             //Überlappung von links
-            if((k.getX() < rechtsUnten.getX()) && (k.getY() > rechtsUnten.getY())){
+            if((k.getX() < auftrag.getAndockpunktRU().getX()) && (k.getX() > auftrag.getAnkerpunkt().getX()) && (k.getY() > auftrag.getAndockpunktRU().getY())){
                 return false;
             }
         }

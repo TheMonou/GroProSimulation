@@ -1,3 +1,193 @@
 15:17:16.053 [main] ERROR de.monou.Main - Error reading file: ID des Auftrags konnte nicht gelesen werden900, 6
 15:18:04.166 [main] ERROR de.monou.Main - Error reading file: ID des Auftrags konnte nicht gelesen werden900, 6
 15:18:31.008 [main] ERROR de.monou.Main - Error reading file: ID des Auftrags konnte nicht gelesen werden900, 6
+14:43:26.861 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@6185295c wird verwendet
+14:43:26.864 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@3e11f9e9
+14:43:26.864 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+14:50:41.849 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@4f59f8fc wird verwendet
+14:50:41.851 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@3e11f9e9
+14:50:41.852 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+14:50:41.852 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@1de5f259 wird verwendet
+14:50:41.852 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@729d991e
+14:50:41.852 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@729d991e
+14:50:46.164 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@4689b967 wird verwendet
+14:52:21.954 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@3fae4bc4
+14:52:32.994 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+14:53:02.789 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@abbc27d wird verwendet
+14:53:05.100 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@2e680728
+14:53:05.100 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@2e680728
+14:53:29.986 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@46df8f1d wird verwendet
+14:53:31.294 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@542f75d4
+14:53:31.683 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+14:53:33.553 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@510543a6 wird verwendet
+14:53:34.929 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@c9b6e6a
+14:53:45.894 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@c9b6e6a
+14:54:42.513 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@485966cc wird verwendet
+14:54:42.515 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@1de5f259
+14:54:42.516 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+14:54:45.804 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@36916eb0 wird verwendet
+14:54:45.804 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@7bab3f1a
+14:54:45.804 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@7bab3f1a
+14:54:47.797 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@184cf7cf wird verwendet
+14:54:47.798 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@16e7dcfd
+14:54:47.800 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+14:54:47.800 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@45018215 wird verwendet
+14:54:47.800 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@65d6b83b
+14:54:47.800 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@65d6b83b
+14:55:30.802 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@4f59f8fc wird verwendet
+14:55:30.804 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@3e11f9e9
+14:55:30.807 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+14:55:30.807 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@21282ed8 wird verwendet
+14:55:30.808 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@36916eb0
+14:55:30.808 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@36916eb0
+14:56:29.054 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@4689b967 wird verwendet
+14:56:29.057 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@3e11f9e9
+14:56:29.060 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+14:56:29.060 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@3c669b34 wird verwendet
+14:56:29.060 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@21282ed8
+14:56:29.060 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@21282ed8
+14:56:42.263 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@4f59f8fc wird verwendet
+14:57:38.889 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@236077d9
+14:57:50.288 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:03:58.781 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@581ac8a8 wird verwendet
+15:03:58.782 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@3e64656f
+15:03:58.782 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@3e64656f
+15:04:00.212 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@212b5695 wird verwendet
+15:04:00.221 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@57d7f8ca
+15:04:00.221 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:04:00.221 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@76c3e77a wird verwendet
+15:04:00.221 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@78123e82
+15:04:15.948 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@78123e82
+15:04:17.030 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@212b5695 wird verwendet
+15:04:17.037 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@57d7f8ca
+15:04:17.037 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:04:17.037 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@76c3e77a wird verwendet
+15:04:17.037 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@78123e82
+15:04:24.350 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@78123e82
+15:04:25.510 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@212b5695 wird verwendet
+15:04:25.517 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@57d7f8ca
+15:04:32.705 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:04:55.021 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@76c3e77a wird verwendet
+15:04:55.021 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@12164936
+15:05:34.669 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@12164936
+15:06:09.176 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@212b5695 wird verwendet
+15:06:09.182 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@57d7f8ca
+15:06:09.182 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:06:09.182 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@76c3e77a wird verwendet
+15:06:09.182 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@78123e82
+15:06:09.182 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@78123e82
+15:06:26.448 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@212b5695 wird verwendet
+15:06:26.453 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@57d7f8ca
+15:06:26.453 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:06:38.760 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@76c3e77a wird verwendet
+15:06:38.760 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@6eb2b878
+15:06:38.760 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@6eb2b878
+15:07:16.404 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@193f604a wird verwendet
+15:07:16.410 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@5403f35f
+15:07:16.411 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:07:33.315 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@24afa506 wird verwendet
+15:07:54.602 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@23fef542
+15:08:02.649 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@23fef542
+15:09:19.966 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@212b5695 wird verwendet
+15:09:19.971 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@57d7f8ca
+15:09:19.971 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:09:59.779 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@3b2ca474 wird verwendet
+15:10:42.761 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@12164936
+15:11:15.927 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@12164936
+15:11:28.880 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@212b5695 wird verwendet
+15:11:28.888 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@57d7f8ca
+15:11:28.889 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:11:39.284 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@24afa506 wird verwendet
+15:11:48.414 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@23fef542
+15:14:29.560 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@23fef542
+15:14:32.094 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@212b5695 wird verwendet
+15:14:32.099 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@57d7f8ca
+15:15:53.208 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@193f604a wird verwendet
+15:15:53.212 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@5403f35f
+15:15:53.212 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:16:03.319 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@583a7b0 wird verwendet
+15:16:07.400 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@12164936
+15:30:47.273 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@212b5695 wird verwendet
+15:30:47.280 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@57d7f8ca
+15:30:47.280 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:30:51.988 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@76c3e77a wird verwendet
+15:30:51.988 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@6eb2b878
+15:30:55.658 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@193f604a wird verwendet
+15:30:55.664 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@5403f35f
+15:30:55.664 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:31:04.780 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@7a1577df wird verwendet
+15:31:08.371 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@6eb2b878
+15:41:00.061 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@212b5695 wird verwendet
+15:41:00.067 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@57d7f8ca
+15:41:00.067 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:41:08.158 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@7a1577df wird verwendet
+15:41:12.337 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@6eb2b878
+15:41:16.687 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:42:02.167 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@193f604a wird verwendet
+15:42:02.171 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@5403f35f
+15:42:02.171 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:43:01.109 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@483f6d77 wird verwendet
+15:43:01.110 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@23fef542
+15:43:01.110 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:43:04.779 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@6295d394 wird verwendet
+15:43:04.782 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@fdefd3f
+15:43:04.782 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:43:04.782 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@d83da2e wird verwendet
+15:43:04.782 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@a4102b8
+15:43:04.782 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:43:04.782 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@a4102b8
+15:43:04.782 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:43:12.274 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@436a4e4b wird verwendet
+15:43:12.278 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@11dc3715
+15:43:12.278 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:43:12.278 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@69930714 wird verwendet
+15:43:12.278 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@7a52f2a2
+15:43:12.278 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:43:12.278 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@7a52f2a2
+15:43:12.278 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:43:29.186 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@193f604a wird verwendet
+15:43:29.192 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@5403f35f
+15:43:29.192 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:43:35.793 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@483f6d77 wird verwendet
+15:43:35.794 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@6eb2b878
+15:43:35.794 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:43:35.794 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@6eb2b878
+15:43:35.794 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:50:28.930 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@212b5695 wird verwendet
+15:50:28.936 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@57d7f8ca
+15:50:28.937 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:50:28.937 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@76c3e77a wird verwendet
+15:50:28.937 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@78123e82
+15:50:28.937 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:50:28.937 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@78123e82
+15:50:28.937 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:50:33.138 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@436a4e4b wird verwendet
+15:50:33.142 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@11dc3715
+15:50:33.142 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:50:33.142 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@69930714 wird verwendet
+15:50:33.142 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@7a52f2a2
+15:50:33.142 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:50:33.142 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@7a52f2a2
+15:50:33.143 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:50:55.104 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@6295d394 wird verwendet
+15:50:55.107 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@fdefd3f
+15:50:55.108 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:50:55.108 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@d83da2e wird verwendet
+15:50:55.108 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@a4102b8
+15:50:55.108 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:50:55.108 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@a4102b8
+15:50:55.108 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:51:07.061 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@57af006c wird verwendet
+15:51:07.066 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@7e5afaa6
+15:51:07.066 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:51:07.066 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@63a12c68 wird verwendet
+15:51:07.066 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@28f3b248
+15:51:07.066 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:51:07.066 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@28f3b248
+15:51:07.066 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:51:50.930 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@212b5695 wird verwendet
+15:51:50.939 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@57d7f8ca
+15:51:50.939 [main] INFO  de.monou.Main - Auftrag konnte platziert werden
+15:52:48.198 [main] INFO  de.monou.Main - Auftrag de.monou.model.Auftrag@204f07f wird verwendet
+15:53:46.331 [main] INFO  de.monou.Main - Möglicher Andockpunkt de.monou.model.Koordinate@542f75d4
+15:53:50.737 [main] INFO  de.monou.Main - Auftrag konnte platziert werden

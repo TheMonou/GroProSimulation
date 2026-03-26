@@ -17,7 +17,6 @@ public class InputHandler {
         List<String> input;
 
         try {
-            logger.info("Reading file: " + filepath);
             input = new ArrayList<>(Files.readAllLines(Path.of(filepath + ".in"))
                     .stream()
                     .filter(line -> !line.isBlank())
@@ -39,9 +38,6 @@ public class InputHandler {
         try {
             breite = Integer.parseInt(breiteTiefe.split(", ")[0]);
             tiefe = Integer.parseInt(breiteTiefe.split(", ")[1]);
-            logger.info("Beschreibung: " + beschreibung);
-            logger.info("Breite: " + breite);
-            logger.info("Optimierungstiefe: " + tiefe);
         } catch (NumberFormatException e) {
             throw new InputHandlerException("Die zweite Zeile muss die Breite und Optimierungstiefe im Format 'breite, tiefe' enthalten.");
         }
@@ -56,12 +52,14 @@ public class InputHandler {
                 throw new InputHandlerException("Ungültige Zeile: " + zeile);
             }
             auftraege.add(auftrag);
-            if (i >= tiefe) {
+            i++;
+            if (i == tiefe) {
                 auftragInput.addAbschnitt(auftraege);
                 auftraege = new ArrayList<>();
                 i = 0;
             }
         }
+        auftragInput.addAbschnitt(auftraege);
 
         return auftragInput;
     }

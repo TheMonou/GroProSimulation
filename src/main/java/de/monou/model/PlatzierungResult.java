@@ -1,14 +1,16 @@
 package de.monou.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PlatzierungResult {
-    private int hoehe;
+    private int hoehe = 0;
     private List<Auftrag> auftragList;
     private List<Koordinate> andockpunkte;
 
     public PlatzierungResult() {
-
+        auftragList = new ArrayList<Auftrag>();
+        andockpunkte = new ArrayList<>();
     }
 
     public int getHoehe() {
@@ -35,8 +37,8 @@ public class PlatzierungResult {
         return andockpunkte;
     }
 
-    public void addAll(List<Auftrag> auftragList) {
-        this.auftragList.addAll(auftragList);
+    public void addAllAndockpunkte(List<Koordinate> andockpunkteList) {
+        this.andockpunkte.addAll(andockpunkteList);
     }
 
     public void add(Auftrag auftrag) {
