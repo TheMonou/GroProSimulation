@@ -3,12 +3,12 @@ package de.monou.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlatzierungResult {
+public class AuftragResult {
     private int hoehe = 0;
     private List<Auftrag> auftragList;
     private List<Koordinate> andockpunkte;
 
-    public PlatzierungResult() {
+    public AuftragResult() {
         auftragList = new ArrayList<Auftrag>();
         andockpunkte = new ArrayList<>();
     }
