@@ -13,19 +13,19 @@ public class AuftragProzessor {
         andockpunkte.add(new Koordinate(0, 0));
 
 
-        ergebnis.addAllAuftraege(backtracking(sortierteAuftraege, new ArrayList<Auftrag>(), breite, andockpunkte));
+        ergebnis.addAllAuftraege(backtracking(sortierteAuftraege, new ArrayList<Auftrag>(), breite, 0, andockpunkte));
         ergebnis.addAllAndockpunkte(andockpunkte);
         ergebnis.setHoehe(bestHoehe);
 
         return ergebnis;
     }
 
-    private List<Auftrag> backtracking(List<Auftrag> verbleibendeAuftraege, List<Auftrag> platzierteAutraege, int maxBreite, List<Koordinate> andockpunkte) {
-        List<Auftrag> auftragList = new ArrayList<>(verbleibendeAuftraege);
-        List<Auftrag> wiedergabeAutrage = new ArrayList<>();
+    private List<Auftrag> backtracking(List<Auftrag> verbleibendeAuftraege, List<Auftrag> platzierteAutraege, int maxBreite, int pfadHoehe, List<Koordinate> andockpunkte) {
+        List<Auftrag> wiedergabeAuftraege = new ArrayList<>();
 
 
-        for (int i = 0; i < auftragList.size(); i++) {
+        for (int i = 0; i < verbleibendeAuftraege.size(); i++) {
+            List<Auftrag> auftragList = new ArrayList<>(verbleibendeAuftraege);
             Auftrag auftrag = auftragList.remove(i);
 
             for (int j = 0; j < andockpunkte.size(); j++) {
@@ -36,61 +36,40 @@ public class AuftragProzessor {
                 neueAndockpunkte.add(auftrag.getAndockpunktLO());
                 neueAndockpunkte.add(auftrag.getAndockpunktRU());
 
-                if (kannPlatzieren(auftrag, maxBreite, neueAndockpunkte)) {
 
-                    // Erster Durchlauf
-                    if (bestHoehe == 0) {
+
+                if (kannPlatzieren(auftrag, maxBreite, platzierteAutraege)) {
                         //Rekursionsanker
                         if (auftragList.isEmpty()) {
-                            bestHoehe = auftrag.getRo().getY();
-                            wiedergabeAutrage.add(auftrag);
-                        } else {
-                            //Rekursionsschritt
-                            wiedergabeAutrage.add(auftrag);
-                            wiedergabeAutrage.addAll(backtracking(auftragList, maxBreite, neueAndockpunkte));
-                        }
-                        andockpunkte = neueAndockpunkte;
-
-                    // Alle weiteren Durchläufe
-                    } else {
-                        // Rekursionsschritt
-                        if (auftragList.isEmpty()) {
-                            if (auftrag.getRo().getY() < bestHoehe) {
+                            if(bestHoehe==0){
+                                bestHoehe = pfadHoehe;
+                                wiedergabeAuftraege.add(auftrag);
+                                andockpunkte = neueAndockpunkte;
+                            }else if(pfadHoehe < bestHoehe){
                                 bestHoehe = auftrag.getRo().getY();
-                                wiedergabeAutrage.clear();
-                                wiedergabeAutrage.add(auftrag);
+                                wiedergabeAuftraege.add(auftrag);
                                 andockpunkte = neueAndockpunkte;
                             }
                         } else {
-                            wiedergabeAutrage.clear();
-                            wiedergabeAutrage.add(auftrag);
-                            wiedergabeAutrage.addAll(backtracking(auftragList, maxBreite, neueAndockpunkte));
-                            andockpunkte = neueAndockpunkte;
+                            //Rekursionsschritt
+                            // 1. Nimm die Liste der Eltern (platzierteAutraege) und kopiere sie in eine NEUE Liste
+                            List<Auftrag> neuePlatzierteAutraege = new ArrayList<>(platzierteAutraege);
+
+                            // 2. Füge den aktuell getesteten Auftrag zu dieser neuen, pfadspezifischen Liste hinzu
+                            neuePlatzierteAutraege.add(auftrag);
+
+                            // 3. Gib diese neue Liste in den Rekursionsschritt weiter
+                            wiedergabeAuftraege.addAll(backtracking(auftragList, neuePlatzierteAutraege, maxBreite, pfadHoehe, neueAndockpunkte));
                         }
-                    }
+
                 }
                 Auftrag flipAuftrag = new Auftrag(auftrag.getId(), auftrag.getHoehe(), auftrag.getBreite(), auftrag.getBeschreibung());
                 flipAuftrag.setAnkerpunkt(moeglicherAndockpunkt);
-                if (kannPlatzieren(flipAuftrag, maxBreite, neueAndockpunkte)) {
 
-                    if (auftragList.isEmpty()) {
-                        if (flipAuftrag.getRo().getY() < bestHoehe) {
-                            bestHoehe = flipAuftrag.getRo().getY();
-                            wiedergabeAutrage.clear();
-                            wiedergabeAutrage.add(flipAuftrag);
-                            andockpunkte = neueAndockpunkte;
-                        }
-                    } else {
-                        wiedergabeAutrage.clear();
-                        wiedergabeAutrage.add(flipAuftrag);
-                        wiedergabeAutrage.addAll(backtracking(auftragList, maxBreite, neueAndockpunkte));
-                        andockpunkte = neueAndockpunkte;
-                    }
-
-                }
             }
+
         }
-        return wiedergabeAutrage;
+        return wiedergabeAuftraege;
     }
 
     private boolean kannPlatzieren(
